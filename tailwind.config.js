@@ -1,23 +1,33 @@
 module.exports = {
   content: ['./*.html'],
+  darkMode: 'class', //this allows us to set class dark on the HTML tag - toggle with JS
   theme: {
     extend: {
       colors: {
-        cyan: 'hsl(180, 66%, 49%)',
-        cyanLight: 'hsl(180, 66%, 69%)',
-        darkViolet: 'hsl(257, 27%, 26%)',
-        red: 'hsl(0, 87%, 67%)',
-        grayishViolet: 'hsl(257, 7%, 63%)',
-        veryDarkBlue: 'hsl(255, 11%, 22%)',
-        veryDarkViolet: 'hsl(260, 8%, 14%) ',
+        darkBlue: 'hsl(217, 28%, 15%)',
+        darkBlue1: 'hsl(218, 28%, 13%)',
+        darkBlue2: 'hsl(216, 53%, 9%)',
+        darkBlue3: 'hsl(219, 30%, 18%)',
+        accentCyan: 'hsl(176, 68%, 64%)',
+        accentBlue: 'hsl(198, 60%, 50%)',
+        lightRed: 'hsl(0, 100%, 63%)',
       },
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        sans: ['Raleway', 'sans-serif'],
+        opensans: ['Open Sans', 'sans-serif']
       },
-      spacing: {
-        180: '32rem',
-      },
+      backgroundImage: () => ({
+        'logo-dark-mode': "url('../images/logo-dark-mode.svg')",
+        'logo-light-mode': "url('../images/logo-light-mode.svg')",
+        'curvy-dark-mode': "url('../images/bg-curvy-dark-mode.svg')",
+        'curvy-light-mode': "url('../images/bg-curvy-light-mode.svg')"
+      })
     },
+  },
+  variants: {
+    extend: {
+      backgroundImage: ['dark']
+    }
   },
   plugins: [],
 }
